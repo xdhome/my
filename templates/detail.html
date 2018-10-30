@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,11 +7,11 @@
 		<title>商品详情列表</title>
 		<meta name="keywords" content="网易考拉海购,海淘,跨境购,代购,进口,跨境电商,海外直邮"/>
 		<meta name="description" content="网易考拉海购-网易旗下_正品低价_海外直采_海外直邮.网易考拉是国内领先的跨境购物商城，轻松购遍海外进口母婴，进口美食 ，进口美妆、进口电子数码，更多产品正陆续推出。网易考拉海购-安全、放心的跨境购物网站，官方认证，正品保证。"/>
-		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
-		<style type="text/css">
+		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/detail.js' %}" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
+        <style type="text/css">
 			.right-nav{height: 338px;width: 100px;position: fixed;top: 0px;right: 30px;display: none;}
 			.right-nav-1{height: 51px;width: 100px;border-bottom: 1px solid #EAEAEA;}
 			.right-nav-2{height: 62px;width: 100px;}
@@ -18,7 +20,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="header">
+    <div class="header">
 			<div class="header-1">
 				<div class="topnav">
 					<div class="topnav-left-1">
@@ -34,11 +36,11 @@
 						<a href="#" id="tel-word">手机考拉海购 </a>
 					</div>
 					<div id="tel-ewmimg">
-						<img src="picture/2dcode-app3.jpg" height="116px"width="116px"/>
+						<img src="{% static 'picture/2dcode-app3.jpg' %}" width="116px" height="116px">
 						<p><strong>下载app</strong></p>
 						<p><strong>赢取1000元新人大礼包</strong></p>
 					</div>
-					
+
 					<div class="topnav-right">
 						<ul>
 							<li>
@@ -79,11 +81,11 @@
 						<a href="#" style="border-bottom:1px solid #EDEDEE ;">我关注的品牌</a>
 						<a href="#">售后管理</a>
 					</div>
-					<div class="person-home-inner-2" >
+					<div class="person-home-inner-2">
 						<span class="small-pic-1"></span>
-						<a href="#" style='padding-left:15px'>联系客服</a>
+						<a href="#" style="padding-left:15px">联系客服</a>
 						<span class="small-pic-2"></span>
-						<a href="#" style='padding-left:15px'>帮助中心</a>
+						<a href="#" style="padding-left:15px">帮助中心</a>
 					</div>
 					<div class="person-home-inner-3">
 						<a href="#">收藏本站</a>
@@ -96,19 +98,19 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="header-2">
 				<div class="header-2-inner">
 					<a href="#" class="logo">
-						<img src="img/logo.jpg"/>
+						<img src="{% static 'img/logo.jpg' %}">
 					</a>
 					<div class="search">
 						<div class="topsearchbox">
 							<div class="topsearchbox-1">
-								<input type="text" placeholder="杜蕾斯" style="height: 34px;width: 458px;line-height: 24px;float:left;display: block;"/>
+								<input type="text" placeholder="杜蕾斯" style="height: 34px;width: 458px;line-height: 24px;float:left;display: block;">
 							</div>
 							<div class="topsearchbox-2">
-								<img src="img/search_03.jpg"/>
+								<img src="{% static 'img/search_03.jpg' %}">
 							</div>
 						</div>
 						<div class="resou">
@@ -127,9 +129,9 @@
 						<span id="nav-gouwuche"></span><span style="color: black;font-size: 14px;">购物车</span>
 					</div>
 				</div>
-				
+
 			</div>
-			
+
 			<div class="nav">
 				<div class="nav-box">
 					<div class="nav-box-left">
@@ -146,52 +148,52 @@
 						<div class="nav-box-left-2">
 							<ul class="nav-box-left-2-ul">
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic1.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic1.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic2.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic2.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic3.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic3.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic4.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic4.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic5.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic5.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic6.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic6.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic7.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic7.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic8.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic8.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic9.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic9.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
 								<li class="nav-box-left-2-li">
-									<img src="picture/navsmallpic10.png" class="smallnavpic"/>
+									<img src="{% static 'picture/navsmallpic10.png' %}" class="smallnavpic">
 									<span>母婴儿童</span>
 									<span class="nav-span"></span>
 								</li>
@@ -265,15 +267,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -347,15 +349,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -429,15 +431,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -511,15 +513,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -593,15 +595,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -675,15 +677,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -757,15 +759,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -839,15 +841,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -921,15 +923,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -1003,15 +1005,15 @@
 							</div>
 							<div class="navliinner-2">
 								<div class="navliinner-2-1" style="background: red;">
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
-									<a href=""><img src="picture/navpic.jpg"/></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
+									<a href=""><img src="{% static 'picture/navpic.jpg' %}"></a>
 								</div>
 								<div class="navliinner-2-2">
 									<a href=""><h1>立即进入</h1></a>
@@ -1032,7 +1034,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="banner">
 				<ul class="list1"></ul>
 				<ul class="list2"></ul>
@@ -1046,7 +1048,7 @@
 			<div class="mian_3"></div>
 			<div class="mian_4">
 				<div class="mian_4_1">
-					<table border="1px solid black" cellspacing="0" cellpadding="0">
+					<table cellspacing="0" cellpadding="0" border="1px solid black">
 						<tbody>
 							<tr>
 								<td><em class="tabtt">基础护肤</em></td>
@@ -1074,7 +1076,7 @@
 			<div class="mian_6"></div>
 			<div class="mian_7"></div>
 			<div class="mian_8"></div>
-			
+
 		</div>
 		<div class="footer">
 			<div class="footer-1">
@@ -1106,7 +1108,7 @@
 					<div class="guidelist">
 						<ul class="clearfix">
 							<li class="bd-none" style="width: 194px;padding-right: 40px;padding-left: 30px;border: none;">
-								<a href="" class="kaolalogo"><img src="img/logo.jpg" width="200px" height="43px"/></a>
+								<a href="" class="kaolalogo"><img src="{% static 'img/logo.jpg' %}" width="200px" height="43px"></a>
 								<div class="focuson">
 									<span>关注我们</span>
 									<i class="itm-1"></i>
@@ -1158,7 +1160,7 @@
 								</dl>
 							</li>
 							<li class="telphone-ewm">
-								<img src="picture/2dcode-app.jpg" />
+								<img src="{% static 'picture/2dcode-app.jpg' %}">
 								<span>扫描下载手机版</span>
 							</li>
 						</ul>
@@ -1171,17 +1173,17 @@
 						<a href="#">About NetEase</a> - <a href="#">公司简介</a> - <a href="#">联系方法</a> - <a href="#">友情链接</a> - <a href="#">招聘信息</a> - <a href="#">客户服务 </a> - <a href="#">隐私政策</a> - <a href="#">网络营销</a> - <a href="#">网络地图</a> - <a href="#">网易考拉海购</a>
 					</p>
 					<p>
-						<a class="spanW" href="#"><img src="picture/f28aa8ee818a42bf832341f605eccefb.png"/></a>浙公网安备 33010002000066号&nbsp;&nbsp;增值电信业务经营许可证：浙B2-20090185-3&nbsp;&nbsp;网络文化经营许可证：浙网文[2016]0155-055号&nbsp;&nbsp;网络文化经营许可证：浙网文[2016]0155-055号
+						<a class="spanW" href="#"><img src="{% static 'picture/f28aa8ee818a42bf832341f605eccefb.png' %}"></a>浙公网安备 33010002000066号&nbsp;&nbsp;增值电信业务经营许可证：浙B2-20090185-3&nbsp;&nbsp;网络文化经营许可证：浙网文[2016]0155-055号&nbsp;&nbsp;网络文化经营许可证：浙网文[2016]0155-055号
 					</p>
 					<p>
-						<span class="spanWrap"><img src="picture/d720d83b55a04b6f932ea845c673c5bf.png"/></span><span class="spanWrap"><img src="picture/guohui.jpg"></span>
+						<span class="spanWrap"><img src="{% static 'picture/d720d83b55a04b6f932ea845c673c5bf.png' %}"></span><span class="spanWrap"><img src="{% static 'picture/guohui.jpg' %}"></span>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="right-nav">
 			<div class="right-nav-1">
-				<img src=""/>
+				<img src="{% static '' %}">
 			</div>
 			<ul>
 				<li>精选活动</li>
@@ -1193,8 +1195,8 @@
 				<li>彩妆香氛</li>
 			</ul>
 			<div class="right-nav-2">
-				<img src=""/>
+				<img src="{% static '' %}">
 			</div>
 		</div>
-	</body>
+    </body>
 </html>

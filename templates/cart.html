@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,11 +10,11 @@
 	    <meta name="keywords" content="跨境,海淘,进口,母婴用品,美妆个护,美食保健,美妆个护,海淘,商城"/>
 	    <meta name="description" content="网易考拉海购-安全、放心的跨境海淘网站，官方认证，正品保证。轻松购遍海外进口母婴，进口美食 ，进口美妆、进口电子数码，更多产品正陆续推出。"/>
     <meta name="renderer" content="webkit">
-		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
-		<style type="text/css">
+		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/cart.js' %}" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}"/>
+        <style type="text/css">
 			.bg{position: absolute;right: 38px;top: 40px;width: 290px;height: 20px;background: url(img/steps.png)no-repeat;}
 			
 			.mian{width: 1090px;padding: 0;margin-top: -24px;overflow: hidden;margin: 0 auto;}
@@ -64,7 +66,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="header">
+    <div class="header">
 			<div class="header-1">
 				<div class="topnav">
 					<div class="topnav-left-1">
@@ -80,11 +82,11 @@
 						<a href="#" id="tel-word">手机考拉海购 </a>
 					</div>
 					<div id="tel-ewmimg">
-						<img src="picture/2dcode-app3.jpg" height="116px"width="116px"/>
+						<img src="{% static 'picture/2dcode-app3.jpg' %}" width="116px" height="116px">
 						<p><strong>下载app</strong></p>
 						<p><strong>赢取1000元新人大礼包</strong></p>
 					</div>
-					
+
 					<div class="topnav-right">
 						<ul>
 							<li>
@@ -125,11 +127,11 @@
 						<a href="#" style="border-bottom:1px solid #EDEDEE ;">我关注的品牌</a>
 						<a href="#">售后管理</a>
 					</div>
-					<div class="person-home-inner-2" >
+					<div class="person-home-inner-2">
 						<span class="small-pic-1"></span>
-						<a href="#" style='padding-left:15px'>联系客服</a>
+						<a href="#" style="padding-left:15px">联系客服</a>
 						<span class="small-pic-2"></span>
-						<a href="#" style='padding-left:15px'>帮助中心</a>
+						<a href="#" style="padding-left:15px">帮助中心</a>
 					</div>
 					<div class="person-home-inner-3">
 						<a href="#">收藏本站</a>
@@ -145,18 +147,18 @@
 			<div class="header-2">
 				<div class="header-2-inner">
 					<a href="index.html" class="logo">
-						<img src="img/logo.jpg"/>
+						<img src="{% static 'img/logo.jpg' %}">
 					</a>
 					<span class="bg"></span>
-				</div>	
-			</div>		
+				</div>
+			</div>
 		</div>
 		<div class="mian">
 			<div class="cart_box">
 				<div class="m_cart_box">
 					<div class="head">
 						<div class="col1">
-							<input type="checkbox" name="selectall" class="u_chk" />
+							<input type="checkbox" name="selectall" class="u_chk">
 							<label for="selectall">全选</label>
 						</div>
 						<div class="col2">商品信息</div>
@@ -167,7 +169,7 @@
 					</div>
 					<div class="m_cart">
 						<div class="ware">
-							<input type="checkbox" name="cartall" class="u_chk" />
+							<input type="checkbox" name="cartall" class="u_chk">
 							<strong class="warename">自营美国1号仓发货</strong>
 						</div>
 						<div class="goods">
@@ -195,7 +197,7 @@
 			</div>
 		</div>
 		<div class="footer">
-			
+
 		</div>
-	</body>
+    </body>
 </html>
