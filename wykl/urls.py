@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from WYKL import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('WYKL.urls')),
-    url(r'^wykl/$', include('WYKL.urls', namespace="wykl")),
+    url(r'^$', views.index),
+    url(r'^wykl/', include('WYKL.urls', namespace="wykl")),
 ]

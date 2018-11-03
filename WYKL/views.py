@@ -1,30 +1,51 @@
+import hashlib
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 
 # 首页
-from WYKL.models import User
+from WYKL.models import *
 
 
 def index(request):
+    # 获取轮播图数据
+    wheels = Wheel.objects.all()
+    # print(len(wheels))
+    # for wheel in wheels:
+    #     print(type(wheel.imgpath), wheel.imgpath)
+    # print(111111)
+    # if request.method == "GET":
+    #     print(2222222)
+    #     return render(request, "index.html")
+    # elif request.method == "POST":
+    #     print(333333)
     # 获取 cookie
-
-    return render(request, "index.html")
+    account = request.COOKIES.get("account")
+    data = {
+        'account': account,
+        'wheels': wheels,
+    }
+    return render(request, "index.html", context=data)
 
 # 详情
 def detail(request):
+
     return render(request, "detail.html")
 
 
 # 购物车
 def cart(request):
+
     return render(request, "cart.html")
 
 
 # 加密
 def encryption(password):
-    pass
+    m = hashlib.md5()
+    m.update(password.encode())
+    return m.hexdigest()
 
 
 # 注册
@@ -67,9 +88,9 @@ def register(request):
 def login(request):
 
     return render(request, "login.html")
-    # return HttpResponse('登陆')
 
 
 # 购买
 def shop(request):
+
     return render(request, "shop.html")
