@@ -5,16 +5,16 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 
-# 首页
 from WYKL.models import *
 
-
+# 首页
 def index(request):
     # 获取轮播图数据
     wheels = Wheel.objects.all()
     # print(len(wheels))
     # for wheel in wheels:
     #     print(type(wheel.imgpath), wheel.imgpath)
+    navs = Nav.objects.all()
     # print(111111)
     # if request.method == "GET":
     #     print(2222222)
@@ -26,6 +26,7 @@ def index(request):
     data = {
         'account': account,
         'wheels': wheels,
+        'navs': navs,
     }
     return render(request, "index.html", context=data)
 
@@ -86,8 +87,19 @@ def register(request):
 
 # 登陆
 def login(request):
-
-    return render(request, "login.html")
+    if request.method == "GET":
+        return render(request, "login.html")
+    elif request.method == "POST":
+        account = request.POST.get("account")
+        password = request.POST.get("password")
+        user = User.objects.filter(account=account).filter(password=password)
+        if user.exists():
+            response = redirect("wykl:index")
+            # 设置 cookie
+            response.set_cookie("account", account)
+            return response
+        else:
+            return HttpResponse("用户名或密码错误")
 
 
 # 购买

@@ -11,3 +11,8 @@ class Wheel(models.Model):
     imgpath = models.CharField(max_length=30)
     class Meta:
         db_table = "wheel"
+
+class Nav(models.Model):
+    imgpath = models.CharField(max_length=30)
+    class Meta:
+        db_table = "nav"

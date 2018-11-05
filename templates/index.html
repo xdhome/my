@@ -1054,19 +1054,24 @@
         </ul>
         <!-- Add Pagination -->
         <ul class="swiper-pagination list2"></ul>
-        <div class="prevent swiper-button-next"></div>
-        <div class="next swiper-button-prev"></div>
+{#        <div class="prevent swiper-button-next"></div>#}
+{#        <div class="next swiper-button-prev"></div>#}
     </div>
 </div>
 <div class="mian">
     <div class="mian-inner">
-        <ul class="lisst1">
+        <div class="imgwrap">
+			<a href=""><div class="oneimg-1"></div></a>
+            <a href=""><div class="oneimg-2"></div></a>
+            <a href=""><div class="oneimg-3"></div></a>
+            <a href=""><div class="oneimg-4"></div></a>
+        </div>
+        <div class="tuijian">
+            {% for nav in navs %}
+                <img src="{% static nav.imgpath%}" alt="">
+            {% endfor %}
 
-
-        </ul>
-        <ul class="swiper-pagination">
-        </ul>
-
+        </div>
     </div>
     <div class="goods-show">
         <div class="goods-title">
@@ -1110,7 +1115,30 @@
             <div class="goods2-nav-list">男士护肤</div>
         </div>
         <div class="goods-detail">
-            <div class="goods1-detail-inner-1" style="display: block;"></div>
+            <div class="goods1-detail-inner-1" style="display: block;">
+                <div class="goods1-detail-1">
+
+
+                    <dl>
+                        <dt>
+                            <img src="{% static 'picture/iihddbew97_800_800.jpg' %}">
+                        </dt>
+                        <dd>
+                            <a href="#">
+                                <span class="goods-number">2件装</span>
+                                <span class="goods-name">|日本板报是的发生</span>
+                            </a>
+                            <p class="goods-text">是的发送到发送到发送到是的发生大发是的发生</p>
+                            <i class="tagitem">每件32元</i>
+                            <span class="w-price">￥123<del>￥312</del></span>
+                            <a class="car-btn-1" href="">立即购买</a>
+                        </dd>
+                    </dl>
+
+
+
+                </div>
+            </div>
             <div class="goods1-detail-inner-2" style="display: none;"></div>
             <div class="goods1-detail-inner-1" style="display: none;"></div>
             <div class="goods1-detail-inner-2" style="display: none;"></div>

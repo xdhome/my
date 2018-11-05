@@ -9,9 +9,9 @@
     <meta name="description" content="网易考拉海购-网易旗下_正品低价_海外直采_海外直邮.
     网易考拉是国内领先的跨境购物商城，轻松购遍海外进口母婴，进口美食 ，进口美妆、进口电子数码，
     更多产品正陆续推出。网易考拉海购-安全、放心的跨境购物网站，官方认证，正品保证。"/>
-    <link rel="stylesheet" href="{% static 'login/css/login.css' %}" />
-    <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
-    <script type="text/javascript" src="{% static 'login/js/login.js' %}" ></script>
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'login/js/login.js' %}"></script>#}
     <script src="{% static 'login/js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -20,6 +20,7 @@
         <div class="kaolalogo">
             <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
         </div>
+        +
         <div class="topimg"></div>
     </div>
 </div>
@@ -28,37 +29,41 @@
         <img src="{% static 'picture/login-mian.png' %}" class="lg-img">
         <div class="login-table">
             <div class="table-left">
-                <div class="table-left-inner">
-                    <h2 class="title">登陆网易邮箱账号</h2>
-                    <div class="input-text">
-                        <div class="input-text-1"></div>
-                        <input type="text" placeholder="请输入网易邮箱账号" value="" class="input-text-2">
-                        <div class="input-text-3" style="display: none;"></div>
-                    </div>
-                    <div class="input-password">
-                        <div class="input-password-1"></div>
-                        <input type="password" placeholder="请输入你的密码" class="input-password-2">
-                        <div class="input-password-3" style="display: none;"></div>
-                    </div>
-                    <div class="tishi">
-                        阿斯顿发生
-                    </div>
-                    <div class="input-check">
-                        <div class="input-check-1">
-                            <input type="checkbox" checked="checked" class="input-check-1-1">
-                            <span style="color: #999999;">十天内免登陆</span>
+                <form action="/wykl/index/" method="post">
+                    {% csrf_token %}
+                    <div class="table-left-inner">
+                        <h2 class="title">登陆网易邮箱账号</h2>
+                        <div class="input-text">
+                            <div class="input-text-1"></div>
+                            <input type="text" placeholder="请输入网易邮箱账号" value="" class="input-text-2" name="account">
+                            <div class="input-text-3" style="display: none;"></div>
                         </div>
-                        <div class="input-check-2">
-                            <a href="#" style="color: #999999;">忘记密码</a>
+                        <div class="input-password">
+                            <div class="input-password-1"></div>
+                            <input type="password" placeholder="请输入你的密码" class="input-password-2" name="password">
+                            <div class="input-password-3" style="display: none;"></div>
+                        </div>
+                        <div class="tishi">
+                            阿斯顿发生
+                        </div>
+                        <div class="input-check">
+                            <div class="input-check-1">
+                                <input type="checkbox" checked="checked" class="input-check-1-1">
+                                <span style="color: #999999;">十天内免登陆</span>
+                            </div>
+                            <div class="input-check-2">
+                                <a href="#" style="color: #999999;">忘记密码</a>
+                            </div>
+                        </div>
+                        <input type="submit" value="登 陆" class="denglu">
+                        {#                    <div class="denglu">#}
+                        {#                        登&nbsp;&nbsp;陆#}
+                        {#                    </div>#}
+                        <div class="zhuce">
+                            <span style="color: #999999;">没有邮箱账号？<a href="/wykl/register/">立即注册</a></span>
                         </div>
                     </div>
-                    <div class="denglu">
-                        登&nbsp;&nbsp;陆
-                    </div>
-                    <div class="zhuce">
-                        <span style="color: #999999;">没有邮箱账号？<a href="/wykl/register/">立即注册</a></span>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="table-footer">
             </div>
