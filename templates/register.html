@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'register/css/register.css' %}"/>
 		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
-		<script src="{% static 'register/js/register.js' %}" type="text/javascript" charset="utf-8"></script>
+{#		<script src="{% static 'register/js/register.js' %}" type="text/javascript" charset="utf-8"></script>#}
 		<style type="text/css">
 			.b-i{height: 72px;width: 24px;}
 			.b-i i{height: 22px;width: 22px;float: left;padding: 0 2px 0 0;background: url(img/sprite.png)no-repeat -65px -102px;margin-bottom: 20px;}
@@ -28,11 +28,15 @@
 		</div>
 		<div class="mian">
 			<h2 class="mian_h2">注册账号</h2>
-			<form action="/wykl/register/" method="post">
+
+
+			<form action="{% url 'wykl:register' %}" method="post">
+
                 {% csrf_token %}
 				<div class="formWrap">
 					<label for="account" class="labelbox">账号：</label>
 					<input id="account" type="text" placeholder="6-18位字母数字组合" name="account">
+                    <i>{{ register_error }}</i>
 					<select id="mail">
 						<option>@163.com</option>
 						<option>@126.com</option>
@@ -82,7 +86,7 @@
 
 				<div class="formWrap" style="position:relative;">
 					<label for="phone" class="labelbox">手机号：</label>
-					<input id="phone" type="text" placeholder="11位手机号" style="display:block">
+					<input id="phone" type="text" placeholder="11位手机号" style="display:block" name="tel">
 					<table class="popb1">
 						<tbody>
 							<tr>
@@ -131,9 +135,10 @@
 				<div class="formWrap">
 					<div class="labelbox2">&nbsp;</div>
 {#					<div id="zhucebox">注&nbsp;册</div>#}
-                    <input type="submit" id="zhucebox" value="注册">
-                </div>
 
+                </div>
+                <i>{{ register_error }}</i>
+                <input type="submit" id="zhucebox" value="注册">
 				<div class="formWrap">
 					<div class="labelbox2">&nbsp;</div>
 					<div id="tipbox"> 用户注册即代表同意《服务条款》和《网络游戏用户隐私保护和个人信息利用政策》</div>

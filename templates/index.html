@@ -15,7 +15,7 @@
     <script src="{% static 'index/js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="{% static 'index/js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'index/js/swiper.js' %}"></script>
-{#    <script type="text/javascript" src="{% static 'index/js/index.js' %}"></script>#}
+    {#    <script type="text/javascript" src="{% static 'index/js/index.js' %}"></script>#}
     <script type="text/javascript" src="{% static 'index/js/index1.js' %}"></script>
 </head>
 <body>
@@ -29,7 +29,7 @@
                                 {#                                <span><img src="" alt=""></span>#}
                                 <span>{{ account }}</span>
                                 <span>|</span>
-                                <a href="#">退出</a>
+                                <a href="/wykl/logout/">退出</a>
                             {% else %}
                                 <a href="/wykl/login/">登录</a>
                                 <span>|</span>
@@ -1054,21 +1054,29 @@
         </ul>
         <!-- Add Pagination -->
         <ul class="swiper-pagination list2"></ul>
-{#        <div class="prevent swiper-button-next"></div>#}
-{#        <div class="next swiper-button-prev"></div>#}
+        {#        <div class="prevent swiper-button-next"></div>#}
+        {#        <div class="next swiper-button-prev"></div>#}
     </div>
 </div>
 <div class="mian">
     <div class="mian-inner">
         <div class="imgwrap">
-			<a href=""><div class="oneimg-1"></div></a>
-            <a href=""><div class="oneimg-2"></div></a>
-            <a href=""><div class="oneimg-3"></div></a>
-            <a href=""><div class="oneimg-4"></div></a>
+            <a href="">
+                <div class="oneimg-1"></div>
+            </a>
+            <a href="">
+                <div class="oneimg-2"></div>
+            </a>
+            <a href="">
+                <div class="oneimg-3"></div>
+            </a>
+            <a href="">
+                <div class="oneimg-4"></div>
+            </a>
         </div>
         <div class="tuijian">
             {% for nav in navs %}
-                <img src="{% static nav.imgpath%}" alt="">
+                <img src="{% static nav.imgpath %}" alt="">
             {% endfor %}
 
         </div>
@@ -1086,6 +1094,48 @@
             <div class="goods1-nav-list">童鞋童装</div>
             <div class="goods1-nav-list">孕妈专区</div>
         </div>
+
+
+        {#            <dl>#}
+        {#                <dt>#}
+        {#                    <img src="{% static 'picture/iihddbew97_800_800.jpg' %}">#}
+        {#                </dt>#}
+        {#                <dd>#}
+        {#                    <a href="#">#}
+        {#                        <span class="goods-number">2件装</span>#}
+        {#                        <span class="goods-name">|日本板报是的发生</span>#}
+        {#                    </a>#}
+        {#                    <p class="goods-text">是的发送到发送到</p>#}
+        {#                                                <i class="tagitem">每件32元</i>#}
+        {#                    <span class="w-price">￥123<del>￥312</del></span>#}
+        {#                    <a class="car-btn-1" href="">立即购买</a>#}
+        {#                </dd>#}
+        {#            </dl>#}
+
+        {% for good in goods %}
+            <a href="{% url 'wykl:shop' good.goodsid %}">
+            <div class="goods1-detail-1">
+                <dl>
+                    <dt>
+                        <img src="{% static good.goodsimg %}">
+                    </dt>
+                    <dd>
+                        <a href="#">
+                            <span class="goods-number">{{ good.goodsname }}</span>
+{#                            <span class="goods-name">|日本板报是的发生</span>#}
+                        </a>
+                        <p class="goods-text">是的发送到发送到</p>
+{#                        <i class="tagitem">每件32元</i>#}
+                        <span class="w-price">￥{{ good.price }}<del>￥312</del></span>
+                        <a class="car-btn-1" href="">立即购买</a>
+                    </dd>
+                </dl>
+            </div>
+            </a>
+        {% endfor %}
+
+
+
         <div class="goods-detail">
             <div class="goods1-detail-inner-1" style="display: block;"></div>
             <div class="goods1-detail-inner-2" style="display: none;"></div>
@@ -1116,28 +1166,27 @@
         </div>
         <div class="goods-detail">
             <div class="goods1-detail-inner-1" style="display: block;">
-                <div class="goods1-detail-1">
 
 
-                    <dl>
-                        <dt>
-                            <img src="{% static 'picture/iihddbew97_800_800.jpg' %}">
-                        </dt>
-                        <dd>
-                            <a href="#">
-                                <span class="goods-number">2件装</span>
-                                <span class="goods-name">|日本板报是的发生</span>
-                            </a>
-                            <p class="goods-text">是的发送到发送到发送到是的发生大发是的发生</p>
-                            <i class="tagitem">每件32元</i>
-                            <span class="w-price">￥123<del>￥312</del></span>
-                            <a class="car-btn-1" href="">立即购买</a>
-                        </dd>
-                    </dl>
+                {#                <div class="goods1-detail-1">#}
+                {#                    <dl>#}
+                {#                        <dt>#}
+                {#                            <img src="{% static 'picture/iihddbew97_800_800.jpg' %}">#}
+                {#                        </dt>#}
+                {#                        <dd>#}
+                {#                            <a href="#">#}
+                {#                                <span class="goods-number">2件装</span>#}
+                {#                                <span class="goods-name">|日本板报是的发生</span>#}
+                {#                            </a>#}
+                {#                            <p class="goods-text">是的发送到发送到发送到是的发生大发是的发生</p>#}
+                {#                            <i class="tagitem">每件32元</i>#}
+                {#                            <span class="w-price">￥123<del>￥312</del></span>#}
+                {#                            <a class="car-btn-1" href="">立即购买</a>#}
+                {#                        </dd>#}
+                {#                    </dl>#}
+                {#                </div>#}
 
 
-
-                </div>
             </div>
             <div class="goods1-detail-inner-2" style="display: none;"></div>
             <div class="goods1-detail-inner-1" style="display: none;"></div>

@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'shop/css/jquery.spinner.css' %}"/>
 		<script src="{% static 'shop/js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'shop/js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
-{#		<script src="{% static 'shop/js/shop.js' %}" type="text/javascript" charset="utf-8"></script>#}
+		<script src="{% static 'shop/js/shop.js' %}" type="text/javascript" charset="utf-8"></script>
         <style type="text/css">
 			.bigarea{width: 400px;height: 400px;position: absolute;left: 420px;top: 1px;z-index: 1000;overflow: hidden;display: none;}
 			.bigarea img{width: 800px;height: 800px;position: absolute;left: 0;top: 0;}
@@ -1067,8 +1067,10 @@
 							<li><a><img src="{% static 'images/showimg (7).jpg' %}"></a></li>
 						</ul>
 					</div>
+
+{###########################  商品图片  #######################}
 					<div class="showimgbox">
-						<b></b>
+                        <img src="{% static good.goodsimg %}" alt="">
 					</div>
 					<div class="bigarea"></div>
 				</div>
@@ -1086,7 +1088,7 @@
 					</dt>
 					<dt class="product_title"></dt>
 					<dt class="subtit">
-						【此款产品尺码标准为美码，比正常尺码偏大】Tommy Hilfiger诠释经典美式风格，简洁圆领短袖T恤，简约线条设计其实更能体现设计水平。
+						{{ good.goodsname }}
 					</dt>
 					<dd class="m_price_wrap">
 						<div class="m_price">
@@ -1100,8 +1102,8 @@
 						<div class="promot_title">
 							<div class="m_zd_prt">
 								<span class="m_price_title">促销</span>
-								<span class="prt_title">N元任选</span>
-								<span class="prt_desc">159任选2件，209任选3件</span>
+								<span class="prt_title">{{ good.price }}</span>
+								<span class="prt_desc"></span>
 							</div>
 						</div>
 					</dd>

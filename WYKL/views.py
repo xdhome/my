@@ -1,4 +1,5 @@
 import hashlib
+from audioop import reverse
 
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -21,12 +22,14 @@ def index(request):
     #     return render(request, "index.html")
     # elif request.method == "POST":
     #     print(333333)
+    goods = Goods.objects.all()
     # 获取 cookie
     account = request.COOKIES.get("account")
     data = {
         'account': account,
         'wheels': wheels,
         'navs': navs,
+        'goods': goods
     }
     return render(request, "index.html", context=data)
 
@@ -51,6 +54,9 @@ def encryption(password):
 
 # 注册
 def register(request):
+    reg_data = {
+        "register_error": ""
+    }
     if request.method == "GET": # 获取注册页面
         # return HttpResponse("11111")
         return render(request, "register.html")
@@ -67,7 +73,8 @@ def register(request):
             for user in users:
                 name_list.append(user.account)
             if account in name_list:
-                return HttpResponse("账号已存在")
+                reg_data["register_error"] = "账号已存在"
+                return render(request, "register.html", reg_data)
             else:
                 # 验证通过，存入数据库
                 user = User()
@@ -82,14 +89,20 @@ def register(request):
                 return response
                 # return render(request, "index.html")
         else:
-            return HttpResponse("账号应在6～18位")
+            reg_data["register_error"] = "账号已存在"
+            return render(request, "login.html", reg_data)
 
 
 # 登陆
 def login(request):
+    log_data= {
+        "login_error": ""
+    }
     if request.method == "GET":
+        print("GET")
         return render(request, "login.html")
     elif request.method == "POST":
+        print("POST")
         account = request.POST.get("account")
         password = request.POST.get("password")
         user = User.objects.filter(account=account).filter(password=password)
@@ -99,10 +112,17 @@ def login(request):
             response.set_cookie("account", account)
             return response
         else:
-            return HttpResponse("用户名或密码错误")
+            log_data["login_error"] = "用户名或密码错误"
+            return render(request,"login.html", log_data)
+
+
+def logout(request):
+    response = redirect("wykl:index")
+    response.delete_cookie("account")
+    return response
 
 
 # 购买
-def shop(request):
-
-    return render(request, "shop.html")
+def shop(request, goodsid):
+    good = Goods.objects.get(goodsid=goodsid)
+    return render(request, "shop.html", context={'good': good})

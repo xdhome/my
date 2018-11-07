@@ -29,7 +29,7 @@
         <img src="{% static 'picture/login-mian.png' %}" class="lg-img">
         <div class="login-table">
             <div class="table-left">
-                <form action="/wykl/index/" method="post">
+                <form action="/wykl/login/" method="post">
                     {% csrf_token %}
                     <div class="table-left-inner">
                         <h2 class="title">登陆网易邮箱账号</h2>
@@ -56,6 +56,7 @@
                             </div>
                         </div>
                         <input type="submit" value="登 陆" class="denglu">
+                        <i>{{ login_error }}</i>
                         {#                    <div class="denglu">#}
                         {#                        登&nbsp;&nbsp;陆#}
                         {#                    </div>#}
