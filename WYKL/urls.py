@@ -22,6 +22,12 @@ urlpatterns = [
 
     url(r'^addcart/$', views.addcart, name='addcart'),  # 加入购物车
 
-    url(r'^subtract/(\d+)$', views.subtract, name='subtract'),  # 购物车减操作
+    url(r'^subtract/$', views.subtract, name='subtract'),  # 购物车减操作
+
+    url(r"^addcart1/$", views.addcart1, name="addcart1"), # 购物车加操作
+
+    url(r"^delcart/$", views.delcart, name="delcart"),  # 购物车删除操作
+
+    url(r"^select/$", views.select, name="select"),  # 购物车选中操作
 
 ]

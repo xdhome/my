@@ -362,6 +362,8 @@
                                 {#                                <span><img src="" alt=""></span>#}
                                 <span>{{ account }}</span>
                                 <span>|</span>
+                                <a href="/wykl/index/">首页</a>
+                                <span>|</span>
                                 <a href="/wykl/logout/">退出</a>
                             {% else %}
                                 <a href="/wykl/login/">登录</a>
@@ -495,7 +497,7 @@
                                     {% if cart.isselect %}
                                         <p class="glyphicon glyphicon-ok" cartid="{{ cart.id }}"></p>
                                     {% else %}
-                                        <p class="no" cartid="{{ cart.id }}"></p>
+                                        <p class="glyphicon no" cartid="{{ cart.id }}"></p>
                                     {% endif %}
                                 </div>
                                 <div class="content-wrapper">
@@ -516,7 +518,8 @@
                                         </p>
                                         <p id="del">
                                             <span class="span1"></span>
-                                            <span class="span2" cartid="{{ cart.id }}">删除</span>
+                                            <span class="span2" cartid="{{ cart.id }}" goodsid="{{ cart.goods_id }}">删除</span>
+{#                                            {{ cart.goods_id }}#}
                                         </p>
                                     </div>
                                 </div>

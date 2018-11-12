@@ -37,9 +37,18 @@
 					<div class="topnav-left-1">
 						考拉欢迎您！
 						<span id="user-ifo">
-							<a href="login.html">登录</a>
-							<span>|</span>
-							<a href="register.html">免费注册</a>
+							{% if account %}
+                                {#                                <span><img src="" alt=""></span>#}
+                                <span>{{ account }}</span>
+                                <span>|</span>
+                                <a href="/wykl/logout/">退出</a>
+                                <span>|</span>
+                                <a href="/wykl/index/">首页</a>
+                            {% else %}
+                                <a href="/wykl/login/">登录</a>
+                                <span>|</span>
+                                <a href="/wykl/register/">免费注册</a>
+                            {% endif %}
 						</span>
 					</div>
 					<div class="topnav-left-2">
@@ -1159,7 +1168,7 @@
 							<span>库存充足</span>
 						</div>
 						 <div class="buybtns">
-						 	<a class="buybtn" href="cart.html">立即购买</a>
+{#						 	<a class="buybtn" href="cart.html">立即购买</a>#}
 						 	<a goodsid="{{ good.goodsid }}" class="addcart">加入购物车</a>
 						 	<a href="" class="m_favbtn" style="visibility: visible;font-weight: normal;font-size: 14px;">收藏</a>
 						 </div>

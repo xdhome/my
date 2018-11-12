@@ -45,19 +45,22 @@ def detail(request):
 def cart(request):
     # 获取 cookie
     account = request.COOKIES.get("account")
-    if account:
-        # 获取用户
-        user = User.objects.get(account=account)
-        userid = user.id
-        # 获取当前用户的购物车数据
-        carts = Cart.objects.filter(user_id=userid)
-        data = {
-            "account": account,
-            "carts": carts,
-        }
-        return render(request, "cart.html",data)
-    else:
-        return render(request, "cart.html")
+    # 获取用户
+    user = User.objects.get(account=account)
+    userid = user.id
+    # 获取当前用户的购物车数据
+    carts = Cart.objects.filter(user_id=userid)
+    # 总价
+    carts_selects = Cart.objects.filter(user_id=userid).filter(isselect=1)
+    print("商品数量" ,len(carts_selects))
+    # total_value = 0
+    # for carts_select in carts_selects:
+    #     total_value += carts_select.
+    data = {
+        "account": account,
+        "carts": carts,
+    }
+    return render(request, "cart.html",data)
 
 
 # 加密
@@ -120,10 +123,10 @@ def login(request):
         "login_error": ""
     }
     if request.method == "GET":
-        print("GET")
+        # print("GET")
         return render(request, "login.html")
     elif request.method == "POST":
-        print("POST")
+        # print("POST")
         account = request.POST.get("account")
         password = encryption(request.POST.get("password"))
         user = User.objects.filter(account=account).filter(password=password)
@@ -146,9 +149,12 @@ def logout(request):
 
 # 详情
 def shop(request, goodsid):
+    # 获取 cookie
+    account = request.COOKIES.get("account")
+    # 获取商品
     good = Goods.objects.get(goodsid=goodsid)
     # print(good.goodsid,"id")
-    return render(request, "shop.html", context={'good': good})
+    return render(request, "shop.html", context={'good': good, "account": account})
 
 
 # 注册账号验证
@@ -158,6 +164,7 @@ def verify(request):
     return None
 
 
+# 加入购物车
 def addcart(request):
     print("加++++")
 
@@ -204,7 +211,57 @@ def addcart(request):
         return JsonResponse(data)
 
 
-def subtract(request, cartid):
+# 购物车减操作
+def subtract(request):
     print("减----")
+    cartid = request.GET.get("cartid")
+    cart = Cart.objects.get(id=cartid)
+    cart.number -= 1
+    if cart.number:
+        cart.save()
+        data = {
+            "number": cart.number
+        }
+        return JsonResponse(data)
+    else:
+        return JsonResponse()
+
+
+# 购物车加操作
+def addcart1(request):
+    print("加----")
+    cartid = request.GET.get("cartid")
+    cart = Cart.objects.get(id=cartid)
+    cart.number += 1
+    cart.save()
+    data = {
+        "number": cart.number
+    }
+    return JsonResponse(data)
+
+
+# 购物车删除操作
+def delcart(request):
+    data = {
+        "status": 1,
+    }
+    cartid = request.GET.get("cartid")
+    # goodsid = request.GET.get("goodsid")
     print(cartid)
-    return JsonResponse()
+    cart = Cart.objects.get(id=cartid)
+    cart.delete()
+
+    return JsonResponse(data)
+
+
+# 购物车选中操作
+def select(request):
+    data = {
+        "status": 2,
+    }
+    print("选中")
+    cartid = request.GET.get("cartid")
+    cart = Cart.objects.get(id=cartid)
+    cart.isselect = not(cart.isselect)
+    cart.save()
+    return JsonResponse(data)
