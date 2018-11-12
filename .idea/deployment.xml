@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="AxfAl">
+    <serverData>
+      <paths name="AxfAl">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/var/www/axf" local="$PROJECT_DIR$/../../xm01/axf" web="/" />
+            <mapping deploy="" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

@@ -10,13 +10,13 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'register/css/register.css' %}"/>
 		<script src="{% static 'js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
-{#		<script src="{% static 'register/js/register.js' %}" type="text/javascript" charset="utf-8"></script>#}
+		<script src="{% static 'register/js/register.js' %}" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			.b-i{height: 72px;width: 24px;}
-			.b-i i{height: 22px;width: 22px;float: left;padding: 0 2px 0 0;background: url(img/sprite.png)no-repeat -65px -102px;margin-bottom: 20px;}
+			.b-i i{height: 22px;width: 22px;float: left;padding: 0 2px 0 0;background: url{% static  'img/sprite.png' %}no-repeat -65px -102px;margin-bottom: 20px;}
 			.b-p{line-height: 20px;overflow: hidden;word-break: break-all;float: left;margin-top: 10px;}
 			.popb1,.popb2{color: red;float: left;margin-left: 10px;width: 280px;height: 45px;max-height: 60px;overflow: hidden;font-size: 12px;float: left; display: none;}
-			.popb-i{height: 22px;width: 22px;float: left;padding: 0 2px 0 0;background: url(img/sprite.png)no-repeat -30px -102px;margin-bottom: 20px;}
+			.popb-i{height: 22px;width: 22px;float: left;padding: 0 2px 0 0;background: url{% static 'img/sprite.png' %}no-repeat -30px -102px;margin-bottom: 20px;}
 		</style>
 	</head>
 	<body>
@@ -86,7 +86,7 @@
 
 				<div class="formWrap" style="position:relative;">
 					<label for="phone" class="labelbox">手机号：</label>
-					<input id="phone" type="text" placeholder="11位手机号" style="display:block" name="tel">
+					<input id="phone" type="text" placeholder="11位手机号"  name="tel">
 					<table class="popb1">
 						<tbody>
 							<tr>
@@ -111,26 +111,26 @@
 							<option>俄罗斯</option>
 							<option>朝鲜</option>
 						</select>
-						<input id="i_phone_number" type="text" placeholder="手机号" name="tel">
+						<input id="i_phone_number" type="text" placeholder="手机号">
 						<br>
 					</div>
 				</div>
 
-				<div class="formWrap" style="position:relative;">
-					<label for="test" class="labelbox">验证码：</label>
-					<input id="test" type="text" placeholder="请输入验证码"><br>
-					<div id="havetext">获取验证码</div>
-					<table class="popb1">
-					<tbody>
-						<tr>
-							<td class="b-i"><i></i></td>
-							<td class="b-p">请输入正确的验证码</td>
-						</tr>
-					</tbody>
-					</table>
-					<span class="popb2"><i class="popb-i"></i></span>
-					<br>
-				</div>
+{#				<div class="formWrap" style="position:relative;">#}
+{#					<label for="test" class="labelbox">验证码：</label>#}
+{#					<input id="test" type="text" placeholder="请输入验证码"><br>#}
+{#					<div id="havetext">获取验证码</div>#}
+{#					<table class="popb1">#}
+{#					<tbody>#}
+{#						<tr>#}
+{#							<td class="b-i"><i></i></td>#}
+{#							<td class="b-p">请输入正确的验证码</td>#}
+{#						</tr>#}
+{#					</tbody>#}
+{#					</table>#}
+{#					<span class="popb2"><i class="popb-i"></i></span>#}
+{#					<br>#}
+{#				</div>#}
 
 				<div class="formWrap">
 					<div class="labelbox2">&nbsp;</div>
@@ -138,10 +138,13 @@
 
                 </div>
                 <i>{{ register_error }}</i>
-                <input type="submit" id="zhucebox" value="注册">
 				<div class="formWrap">
-					<div class="labelbox2">&nbsp;</div>
-					<div id="tipbox"> 用户注册即代表同意《服务条款》和《网络游戏用户隐私保护和个人信息利用政策》</div>
+					<div class="labelbox2">&nbsp;
+
+                    </div>
+					<div id="tipbox">
+                        <input type="submit" id="zhucebox" value="注册">
+                        用户注册即代表同意《服务条款》和《网络游戏用户隐私保护和个人信息利用政策》</div>
 				</div>
 
 			</form>

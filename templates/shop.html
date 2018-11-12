@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'shop/css/jquery.spinner.css' %}"/>
 		<script src="{% static 'shop/js/jquery-1.12.3.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'shop/js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'shop/js/shop1.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'shop/js/shop.js' %}" type="text/javascript" charset="utf-8"></script>
         <style type="text/css">
 			.bigarea{width: 400px;height: 400px;position: absolute;left: 420px;top: 1px;z-index: 1000;overflow: hidden;display: none;}
@@ -1153,13 +1154,13 @@
 							<span class="ctrnum_wrap">
 								<a class="raduce">-</a>
 								<input type="text" value="1" class="ctrnum">
-								<a class="add">+</a>
+								<a  class="add">+</a>
 							</span>
 							<span>库存充足</span>
 						</div>
 						 <div class="buybtns">
 						 	<a class="buybtn" href="cart.html">立即购买</a>
-						 	<a class="addcart">加入购物车</a>
+						 	<a goodsid="{{ good.goodsid }}" class="addcart">加入购物车</a>
 						 	<a href="" class="m_favbtn" style="visibility: visible;font-weight: normal;font-size: 14px;">收藏</a>
 						 </div>
 						 <div class="buytips">

@@ -29,6 +29,8 @@
                                 {#                                <span><img src="" alt=""></span>#}
                                 <span>{{ account }}</span>
                                 <span>|</span>
+                                <a href="/wykl/cart/">购物车</a>
+                                <span>|</span>
                                 <a href="/wykl/logout/">退出</a>
                             {% else %}
                                 <a href="/wykl/login/">登录</a>
@@ -1111,7 +1113,7 @@
         {#                    <a class="car-btn-1" href="">立即购买</a>#}
         {#                </dd>#}
         {#            </dl>#}
-
+{#                    首页商品展示#}
         {% for good in goods %}
             <a href="{% url 'wykl:shop' good.goodsid %}">
             <div class="goods1-detail-1">
